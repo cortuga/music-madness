@@ -2,13 +2,15 @@ import React, { Component } from "react"
 import Homepage from "./components/Homepage"
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom"
 import Tool from "./components/Tool"
+import SCI from "./components/SCI"
+import Cake from "./components/Cake"
 
 class App extends Component {
   render() {
     return (
       <Router>
         <header>
-          <h1>My bands</h1>
+          <h1>Music! GET SOME!!!</h1>
           <nav>
             <ul>
               <li>
@@ -20,15 +22,17 @@ class App extends Component {
               <li>
                 <Link to='/sci'>SCI </Link>
               </li>
-              <li>{/* <Link to='/cakes'>Cake </Link> */}</li>
+              <li>
+                <Link to='/cakes'>Cake </Link>
+              </li>
             </ul>
           </nav>
         </header>
         <Switch>
-          <Route exact path='/' component={Homepage}></Route>
+          <Route exact path='/' exact component={Homepage}></Route>
           <Route exact path='/tool' component={Tool}></Route>
-          {/* <Route exact path='/sci' component={SCI}></Route> */}
-          {/* <Route exact path='/cakes' component={Cake}></Route> */}
+          <Route exact path='/sci' component={SCI}></Route>
+          <Route exact path='/cakes' component={Cake}></Route>
         </Switch>
       </Router>
     )
